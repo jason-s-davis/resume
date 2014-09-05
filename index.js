@@ -11,26 +11,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/:file', function (req, res) {
 
-    var options = {
-        root: __dirname + '/public/',
-        dotfiles: 'deny',
-        headers: {
-            'x-timestamp': Date.now(),
-        'x-sent': true
-        }
-    };
-
     var fileName = req.params.file;
 
-    res.sendFile(fileName, options, function (err) {
-        if (err) {
-            console.log(err);
-            res.status(err.status);
-        }
-        else {
-            console.log('Sent: ' + fileName);    
-        }
-    });
+    res.sendFile(__dirname + '/public/' + fileName);
+
 });
 
 app.listen(5000);

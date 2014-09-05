@@ -9,7 +9,7 @@
     "hello": "node node_modules/markdown-to-json/bin/m2j resume.md -o public/js/resume.json"
   },
   "dependencies": {
-    "express": "~4.x",
+    "express": "~3.x",
     "markdown-to-json": "^0.4.2"
   },
   "engines": {
