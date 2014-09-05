@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "adios": "rm public/js/resume.json;"
+    "adios": "rm public/js/resume.json;",
+    "hello": "node node_modules/markdown-to-json/bin/m2j resume.md -o public/js/resume.json"
   },
   "dependencies": {
     "express": "~4.x",
