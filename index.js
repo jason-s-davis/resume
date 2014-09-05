@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 
-app.set('env', 'production');
+//app.set('env', 'production');
 
 // For serving the static stuff
 // which is all this app is right now
