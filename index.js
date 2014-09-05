@@ -1,13 +1,35 @@
-var express = require('express')
+var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
 
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+app.set('env', 'production');
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+// For serving the static stuff
+// which is all this app is right now
+app.use(express.static(__dirname + '/public'));
+
+
+app.get('/', function (req, res) {
+
+    var options = {
+        root: __dirname + '/public/',
+        dotfiles: 'deny',
+        headers: {
+            'x-timestamp': Date.now(),
+        'x-sent': true
+        }
+    };
+
+
+    res.sendFile('index.html', options, function (err) {
+        if (err) {
+            console.log(err);
+            res.status(err.status);
+        }
+        else {
+            console.log('Sent index.html');    
+        }
+    });
+});
+
+app.listen(3000);
