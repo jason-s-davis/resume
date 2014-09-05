@@ -9,7 +9,7 @@ app.set('env', 'production');
 app.use(express.static(__dirname + '/public'));
 
 
-app.get('/', function (req, res) {
+app.get('/:file', function (req, res) {
 
     var options = {
         root: __dirname + '/public/',
@@ -20,14 +20,15 @@ app.get('/', function (req, res) {
         }
     };
 
+    var fileName = req.params.file;
 
-    res.sendFile('index.html', options, function (err) {
+    res.sendFile(fileName, options, function (err) {
         if (err) {
             console.log(err);
             res.status(err.status);
         }
         else {
-            console.log('Sent index.html');    
+            console.log('Sent: ' + fileName);    
         }
     });
 });

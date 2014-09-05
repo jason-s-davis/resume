@@ -4,10 +4,12 @@
   "description": "Express resume app.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "adios": "rm public/js/resume.json;"
   },
   "dependencies": {
-    "express": "~4.x"
+    "express": "~4.x",
+    "markdown-to-json": "^0.4.2"
   },
   "engines": {
     "node": "0.11.x"
