@@ -1,20 +1,14 @@
-var express = require('express');
+
+var express = require('express')
 var app = express();
 
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
 
-//app.set('env', 'production');
+app.get('/', function(request, response) {
+      response.send('Hello World!')
+})
 
-// For serving the static stuff
-// which is all this app is right now
-app.use(express.static(__dirname + '/public'));
-
-
-app.get('/:file', function (req, res) {
-
-    var fileName = req.params.file;
-
-    res.sendFile(__dirname + '/public/' + fileName);
-
-});
-
-app.listen(5000);
+app.listen(app.get('port'), function() {
+      console.log("Node app is running at localhost:" + app.get('port'))
+})
