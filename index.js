@@ -29,23 +29,20 @@ app.use(connectAssets({
   helperContext: app.locals
 }));
 
-// app.use(express.static(__dirname + '/public'));
+
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
 
-
-
-
 app.get('/', function(req, res) {
-    // res.send('Hello World!');
-
     res.render('home', {
         title: 'Home'
     });
 });
 
 app.get('/stuff', function(req, res) {
-    res.send('...');
+    res.render('stuff', {
+        title: 'Stuff'
+    });
 });
 
 
