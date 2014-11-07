@@ -39,11 +39,11 @@ app.get('/', function(req, res) {
     });
 });
 
-app.get('/stuff', function(req, res) {
-    res.render('stuff', {
-        title: 'Stuff'
-    });
-});
+// app.get('/stuff', function(req, res) {
+//     res.render('stuff', {
+//         title: 'Stuff'
+//     });
+// });
 
 
 app.listen(app.get('port'), function() {
