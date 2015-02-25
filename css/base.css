@@ -18,4 +18,7 @@ a {
     .phoneblock {
         width: 90%;
     }
+    .phoneblock h3 {
+        white-space: nowrap;
+    }
 }
