@@ -44,3 +44,7 @@ a {
         margin-bottom: 1.5rem;
     }
 }
+
+@page {
+    margin: 0.5cm;
+}
