@@ -17,11 +17,6 @@ a {
     color: rgb(0,0,0);
 }
 
-.small-row hr {
-    margin-top: 2rem;
-    margin-bottom: .5rem;
-}
-
 
 
 /* Smaller than standard 960 (devices and browsers) */
@@ -32,4 +27,13 @@ a {
     .phoneblock h3 {
         white-space: nowrap;
     }
+}
+
+
+@media print {
+    .small-row hr {
+        margin-top: 2rem;
+        margin-bottom: .5rem;
+    }
+    
 }
