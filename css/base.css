@@ -33,16 +33,17 @@ a {
 @media print {
     .small-row hr {
         margin-top: 1.5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, li {
         margin-bottom: 0rem;
     }
 
     .four p {
         margin-bottom: 1rem;
     }
+
 }
 
 @page {
