@@ -17,6 +17,10 @@ a {
     color: rgb(0,0,0);
 }
 
+.smaller {
+    font-size: 1em;
+}
+
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {
     .phoneblock {
