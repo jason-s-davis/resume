@@ -7,10 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "~3.4.x"
-  },
-  "engines": {
-    "node": "0.10.x"
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "pug": "^2.0.4"
   },
   "repository": {
     "type": "git",
@@ -21,16 +20,12 @@
     "heroku",
     "express"
   ],
-  "author": "Mark Pundsack",
-  "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
-  ],
+  "author": "Jason",
+  "contributors": [],
   "license": "MIT",
   "devDependencies": {
     "compression": "^1.2.0",
-    "connect-assets": "^4.3.3",
-    "jade": "^1.7.0",
-    "less": "^1.7.5",
-    "lodash": "^2.4.1"
+    "connect-assets": "^6.0.1",
+    "less": "^3.11.1"
   }
 }

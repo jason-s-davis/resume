@@ -8,11 +8,9 @@ var _ = require('lodash');
 var connectAssets = require('connect-assets');
 var path = require('path');
 
-
 var hour = 3600000;
 var day = hour * 24;
 var week = day * 7;
-
 
 /**
  * Server setup.
@@ -20,23 +18,26 @@ var week = day * 7;
 
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(compress());
-app.use(connectAssets({
-  paths: [path.join(__dirname, 'public/css'), path.join(__dirname, 'public/js')],
-  helperContext: app.locals
-}));
+app.use(
+  connectAssets({
+    paths: [
+      path.join(__dirname, 'public/css'),
+      path.join(__dirname, 'public/js'),
+    ],
+    helperContext: app.locals,
+  }),
+);
 
-
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
-
+app.use(express.static(path.join(__dirname, 'public'), {maxAge: week}));
 
 app.get('/', function(req, res) {
-    res.render('home', {
-        title: 'Home'
-    });
+  res.render('home', {
+    title: 'Home',
+  });
 });
 
 // app.get('/stuff', function(req, res) {
@@ -45,7 +46,6 @@ app.get('/', function(req, res) {
 //     });
 // });
 
-
 app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
+  console.log('Node app is running at localhost:' + app.get('port'));
 });
